@@ -81,8 +81,6 @@ if __name__ == "__main__":
     team_get_b, index_b = dig_resource_sort(team_money_b, 100000)
     team_get_c, index_c = dig_resource_sort(team_money_c, 200000)
 
-    print(index_a)
-
     tier1, tier2, tier3, tier4 = tier_classification(team_money_a)
 
     d = {'team_name':[], 'money_a':[], 'tier':[]}
@@ -130,7 +128,9 @@ if __name__ == "__main__":
         tmp = pd.DataFrame({'team_name':[team_list[i].team_name], 'money_get':[team_list[i].money_get]})
         result_frame = result_frame.append(tmp, ignore_index = True)
 
-    print(result_frame)
+    # print(result_frame)
+
+    result_frame = result_frame.sort_values(by='money_get', ascending=False)
 
     result_frame.to_csv('./result.csv', index=False)
 
