@@ -53,7 +53,7 @@ def dig_resource_sort(team_investment, money):
     return team_get, index_sorted
 
 if __name__ == "__main__":
-    team_money_distribution = pd.read_csv("./test.csv")
+    team_money_distribution = pd.read_csv("./data.csv")
 
     team_list = []
     read_check_flag = 0
